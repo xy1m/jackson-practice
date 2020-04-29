@@ -21,16 +21,7 @@ public class TestCore {
     public static final ObjectMapper mapper = new ObjectMapper();
 
     public static void main(String... args) throws IOException {
-        //MyValue value = mapper.readValue(new File("data.json"), MyValue.class);
-        //MyValue value1 = mapper.readValue(new URL("http://xxx.json"), MyValue.class);
-        MyValue value2 = mapper.readValue("{\"name\":\"Bob\",\"age\":12}", MyValue.class);
-        System.out.println(value2);
 
-        MyValue value3 = new MyValue();
-        value3.name = "george";
-        value3.age = 29;
-        String jsongString = mapper.writeValueAsString(value3);
-        System.out.println(jsongString);
         Map<String, String> map = mapper.readValue(new File("/Users/gzhenpeng/sample.json"), Map.class);
         System.out.println("===" + map);
         List<String> names = mapper.readValue("[\"a\",\"b\",\"c\"]", List.class);
